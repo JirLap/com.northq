@@ -1,0 +1,30 @@
+{
+  "triggers": [
+    {
+      "id": "alarm_battery",
+      "title": {
+        "en": "The battery alarm turned on",
+        "nl": "De batterijwaarschuwing gaat aan",
+        "de": "Der Batteriealarm wurde eingeschaltet",
+        "cs": "Alarm vybité baterie aktivovaný"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "NQ9021_reset_meter",
+      "title": {
+        "en": "Reset meter values",
+        "nl": "Meter waarden opnieuw instellen",
+        "de": "Zählerwerte zurücksetzen",
+        "cs": "Vynulovat měřené hodnoty"
+      },
+      "hint": {
+        "en": "Reset the accumulated power usage value (kWh), note that this can not be reversed.",
+        "nl": "Stel geaccumuleerde stroomverbruik waarde (kWh) opnieuw in, dit kan niet worden teruggedraaid.",
+        "de": "Setzen Sie den kumulierten Energieverbrauchswert (kWh) zurück, beachten Sie, dass dies nicht rückgängig gemacht werden kann.",
+        "cs": "Vynulovat celkovou kumulovanou hodnotu (kWh) - poznámka: toto nelze vrátit zpět."
+      }
+    }
+  ]
+}

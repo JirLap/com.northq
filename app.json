@@ -1,14 +1,15 @@
 {
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.northq",
-  "sdk": 2,
+  "sdk": 3,
   "name": {
     "en": "NorthQ",
     "nl": "NorthQ",
     "de": "NorthQ",
     "cs": "NorthQ"
   },
-  "version": "1.5.9",
-  "compatibility": ">=3.0.0",
+  "version": "3.2.4",
+  "compatibility": ">=5.0.0",
   "description": {
     "en": "NorthQ Z-Wave devices for Homey",
     "nl": "NorthQ Z-Wave apparaten voor Homey",
@@ -16,13 +17,25 @@
     "cs": "NorthQ Z-Wave zařízení pro Homey"
   },
   "tags": {
-    "en": ["power meter"],
-    "nl": ["power meter"],
-    "de": ["power meter"],
-    "cs": ["měřič elektrické energie"]
+    "en": [
+      "power meter"
+    ],
+    "nl": [
+      "power meter"
+    ],
+    "de": [
+      "power meter"
+    ],
+    "cs": [
+      "měřič elektrické energie"
+    ]
   },
-  "category": ["energy"],
-  "permissions": ["homey:wireless:zwave"],
+  "category": [
+    "energy"
+  ],
+  "permissions": [
+    "homey:wireless:zwave"
+  ],
   "images": {
     "large": "/assets/images/large.jpg",
     "small": "/assets/images/small.jpg"
@@ -43,16 +56,6 @@
       }
     ]
   },
-  "capabilities": {
-    "time_set": {
-      "type": "string",
-      "title": {
-        "en": "Last online"
-      },
-      "getable": true,
-      "setable": false
-    }
-  },
   "flow": {
     "triggers": [
       {
@@ -65,8 +68,8 @@
         },
         "args": [
           {
-            "name": "device",
             "type": "device",
+            "name": "device",
             "filter": "driver_id=NQ9021"
           }
         ]
@@ -89,8 +92,8 @@
         },
         "args": [
           {
-            "name": "device",
             "type": "device",
+            "name": "device",
             "filter": "driver_id=NQ9021"
           }
         ]
@@ -99,7 +102,6 @@
   },
   "drivers": [
     {
-      "id": "NQ9021",
       "name": {
         "en": "NQ9021 Power Meter",
         "nl": "NQ9021 krachtmeter",
@@ -131,8 +133,10 @@
             "cs": "Stiskněte 3x tlačítko na vašem zařízení NQ9021"
           }
         },
-        "wakeUpInterval": 1800,
-        "associationGroups": [1],
+        "wakeUpInterval": 300,
+        "associationGroups": [
+          1
+        ],
         "defaultConfiguration": [
           {
             "id": 1,
@@ -152,7 +156,7 @@
           {
             "id": 4,
             "size": 1,
-            "value": 0
+            "value": 50
           },
           {
             "id": 5,
@@ -170,14 +174,9 @@
             "value": 5
           },
           {
-            "id": 8,
-            "size": 2,
-            "value": 300
-          },
-          {
             "id": 10,
             "size": 2,
-            "value": 3
+            "value": 60
           },
           {
             "id": 11,
@@ -192,14 +191,21 @@
         ]
       },
       "class": "sensor",
-      "capabilities": ["measure_battery", "measure_power", "meter_power"],
+      "capabilities": [
+        "measure_battery",
+        "measure_power",
+        "meter_power"
+      ],
       "images": {
         "large": "/drivers/NQ9021/assets/images/large.jpg",
         "small": "/drivers/NQ9021/assets/images/small.jpg"
       },
       "energy": {
         "cumulative": true,
-        "batteries": ["AA", "AA"]
+        "batteries": [
+          "AA",
+          "AA"
+        ]
       },
       "settings": [
         {
@@ -300,7 +306,7 @@
             "min": 0,
             "max": 127
           },
-          "value": 0,
+          "value": 50,
           "label": {
             "en": "IR pulse width",
             "cs": "Síla IR čidla"
@@ -409,7 +415,7 @@
             "min": 0,
             "max": 32767
           },
-          "value": 10,
+          "value": 60,
           "label": {
             "en": "Keep Alive Period [s]",
             "cs": "Délka bdělosti [s]"
@@ -430,7 +436,7 @@
             "min": 0,
             "max": 32767
           },
-          "value": 10,
+          "value": 0,
           "label": {
             "en": "Realtime Mode [s]",
             "cs": "Online mod [s]"
@@ -486,7 +492,18 @@
             }
           ]
         }
-      ]
+      ],
+      "id": "NQ9021"
     }
-  ]
+  ],
+  "capabilities": {
+    "last_online": {
+      "type": "string",
+      "title": {
+        "en": "Last online"
+      },
+      "getable": true,
+      "setable": false
+    }
+  }
 }

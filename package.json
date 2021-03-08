@@ -1,9 +1,14 @@
 {
   "name": "com.northq",
-  "version": "0.1.1",
+  "version": "3.1.1",
   "description": "NorthQ",
   "main": "app.js",
   "dependencies": {
-    "homey-meshdriver": "^1.3.18"
+    "homey-meshdriver": "^2.0.2",
+    "homey-zwavedriver": "^2.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.20.0",
+    "eslint-config-athom": "^2.1.0"
   }
 }

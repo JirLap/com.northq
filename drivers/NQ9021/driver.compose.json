@@ -1,0 +1,393 @@
+{
+  "name": {
+    "en": "NQ9021 Power Meter",
+    "nl": "NQ9021 krachtmeter",
+    "de": "NQ9021 Stromzähler",
+    "cs": "NQ9021 Měřič spotřeby elektřiny"
+  },
+  "zwave": {
+    "manufacturerId": 150,
+    "productTypeId": 1,
+    "productId": 1,
+    "productDocumentation": "https://www.northq.com/q-power",
+    "pid": 1783,
+    "imageRemotePath": "https://static.wixstatic.com/media/4c1d83_a2b33674da7842f49e2aeb4d8502ebc7~mv2.png/v1/crop/x_0,y_0,w_975,h_1000/fill/w_609,h_623,al_c,q_90/smart%20meter%20reader2%20sensor_436%20less%20shad.webp",
+    "learnmode": {
+      "image": "/drivers/NQ9021/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press the button on your NQ9021 Power Meter three times",
+        "nl": "Druk driemaal op de knop op de NQ9021 krachtmeter",
+        "de": "Den Knopf am NQ9021 Stromzähler dreimal drücken",
+        "cs": "Stiskněte 3x tlačítko na vašem zařízení NQ9021"
+      }
+    },
+    "unlearnmode": {
+      "image": "/drivers/NQ9021/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press the button on your NQ9021 Power Meter three times",
+        "nl": "Druk driemaal op de knop op de NQ9021 krachtmeter",
+        "de": "Den Knopf am NQ9021 Stromzähler dreimal drücken",
+        "cs": "Stiskněte 3x tlačítko na vašem zařízení NQ9021"
+      }
+    },
+    "wakeUpInterval": 300,
+    "associationGroups": [
+      1
+    ],
+    "defaultConfiguration": [
+      {
+        "id": 1,
+        "size": 2,
+        "value": 10000
+      },
+      {
+        "id": 2,
+        "size": 1,
+        "value": 1
+      },
+      {
+        "id": 3,
+        "size": 1,
+        "value": 0
+      },
+      {
+        "id": 4,
+        "size": 1,
+        "value": 50
+      },
+      {
+        "id": 5,
+        "size": 1,
+        "value": 20
+      },
+      {
+        "id": 6,
+        "size": 1,
+        "value": 0
+      },
+      {
+        "id": 7,
+        "size": 1,
+        "value": 5
+      },
+      {
+        "id": 10,
+        "size": 2,
+        "value": 60
+      },
+      {
+        "id": 11,
+        "size": 2,
+        "value": 0
+      },
+      {
+        "id": 13,
+        "size": 1,
+        "value": 0
+      }
+    ]
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_battery",
+    "measure_power",
+    "meter_power"
+  ],
+  "images": {
+    "large": "/drivers/NQ9021/assets/images/large.jpg",
+    "small": "/drivers/NQ9021/assets/images/small.jpg"
+  },
+  "energy": {
+    "cumulative": true,
+    "batteries": [
+      "AA",
+      "AA"
+    ]
+  },
+  "settings": [
+    {
+      "id": "pulse_factor",
+      "zwave": {
+        "index": 1,
+        "size": 4
+      },
+      "type": "number",
+      "attr": {
+        "min": 10,
+        "max": 1000000
+      },
+      "value": 10000,
+      "label": {
+        "en": "Pulse factor [pulses]",
+        "nl": "Pulsfactor [pulses]",
+        "de": "Pulsfaktor [pulses]",
+        "cs": "Pulsní faktor [pulses]"
+      },
+      "hint": {
+        "en": "How many pulses * 10 per kWh (min 10, max 1000000)",
+        "nl": "Hoeveel pulsen * 10 per kWh (min 10, max 1000000)",
+        "de": "Anzahl Pulse * 10 pro kWh (min 10, max 1000000)",
+        "cs": "Kolik pulsů * 10 per kWh (min 10, max 1000000)"
+      }
+    },
+    {
+      "id": "sensor_type",
+      "zwave": {
+        "index": 2,
+        "size": 1
+      },
+      "type": "dropdown",
+      "label": {
+        "en": "Sensor Type",
+        "nl": "Sensortype",
+        "de": "Sensortyp",
+        "cs": "Typ sensoru"
+      },
+      "value": "1",
+      "hint": {
+        "en": "Choose choose your meter type. Default value: Pulse meter (LED)",
+        "nl": "Kies uw meter type kiezen. Standaardwaarde: pulsmeter (LED)",
+        "de": "Wählen Sie den Stromzählertyp. Standard: Pulsmeter (LED)",
+        "cs": "Zvolte typ vašeho měřiče elektřiny. Defaultní hodnota: Pulsní (LED)"
+      },
+      "values": [
+        {
+          "id": "1",
+          "label": {
+            "en": "Pulse meter (LED)",
+            "nl": "Pulsmeter (LED)",
+            "de": "Pulsmeter (LED)",
+            "cs": "Pulsní meter (LED)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Mechanical meter",
+            "nl": "Mechanische meter",
+            "de": "Mechanischer Zähler",
+            "cs": "Mechanický měřič (kolečko)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ir_listening_period",
+      "zwave": {
+        "index": 3,
+        "size": 1
+      },
+      "type": "number",
+      "attr": {
+        "min": 0,
+        "max": 127
+      },
+      "value": 0,
+      "label": {
+        "en": "IR listening period",
+        "cs": "Perioda IR čidla"
+      },
+      "hint": {
+        "en": "Additional time for measuring feedback (only for wheel meters)",
+        "cs": "Dodatečný čas pro měření (pouze pro mechanický měřič)"
+      }
+    },
+    {
+      "id": "ir_pulse_width",
+      "zwave": {
+        "index": 4,
+        "size": 1
+      },
+      "type": "number",
+      "attr": {
+        "min": 0,
+        "max": 127
+      },
+      "value": 50,
+      "label": {
+        "en": "IR pulse width",
+        "cs": "Síla IR čidla"
+      },
+      "hint": {
+        "en": "Infrared output power feedback target (increase IR power until we reach this level in average feedback)",
+        "cs": "Síla infrared čidla (zvětší sílu IR dokud se neosáhne této hodnoty)"
+      }
+    },
+    {
+      "id": "poll_frequency",
+      "zwave": {
+        "index": 5,
+        "size": 1
+      },
+      "type": "number",
+      "attr": {
+        "min": 0,
+        "max": 50
+      },
+      "value": 20,
+      "label": {
+        "en": "Poll frequency [times per second]",
+        "cs": "Frekvence počítání [počet za vteřinu]"
+      },
+      "hint": {
+        "en": "How many times to wakeup per second",
+        "cs": "Kolikrát se provede odečet za vteřinu"
+      }
+    },
+    {
+      "id": "pulse_threshold_low",
+      "zwave": {
+        "index": 6,
+        "size": 1
+      },
+      "type": "number",
+      "attr": {
+        "min": 0,
+        "max": 127
+      },
+      "value": 0,
+      "label": {
+        "en": "Pulse Threshold Low",
+        "cs": "Nejnižší úroveň pulsů"
+      },
+      "hint": {
+        "en": "Low detection threshold for wheel meters",
+        "cs": "Nejnižší práh detekce pulsů pro mechanický měřič"
+      }
+    },
+    {
+      "id": "pulse_threshold_high",
+      "zwave": {
+        "index": 7,
+        "size": 1
+      },
+      "type": "number",
+      "attr": {
+        "min": 0,
+        "max": 127
+      },
+      "value": 5,
+      "label": {
+        "en": "Pulse Threshold High",
+        "cs": "Nejvyšší úroveň pulsů"
+      },
+      "hint": {
+        "en": "High detection threshold for wheel meters",
+        "cs": "Nejvyšší práh detekce pulsů pro mechanický měřič"
+      }
+    },
+    {
+      "id": "pulse_count",
+      "zwave": {
+        "index": 9,
+        "size": 4
+      },
+      "type": "number",
+      "attr": {
+        "min": 0,
+        "max": 2147483647
+      },
+      "value": 0,
+      "label": {
+        "en": "Total number of pulses",
+        "nl": "Totaal aantal pulsen",
+        "de": "Total Anzahl Pulse",
+        "cs": "Celkový počet pulsů"
+      },
+      "hint": {
+        "en": "Use this register to set the total meter consumption. In order for the Power Reader to report the proper total meter consumption, the value for this register has to be initialized with meter value * impulse factor.",
+        "nl": "Gebruik dit register om het totale meterverbruik in te stellen. Om ervoor te zorgen dat de krachtmeter het juiste totale verbruik van de meter rapporteert, moet de waarde voor dit geregistreerde apparaat worden geïnitialiseerd met de waarde * impulsimpuls.",
+        "de": "Verwenden Sie dieses Register, um den Gesamtverbrauch des Zählers einzustellen. Damit der Stromzähler den korrekten Gesamtverbrauch des Zählers meldet, muss der Wert für dieses Register mit dem Zählerwert * Impulsfaktor initialisiert werden.",
+        "cs": "Použijte tento údaje k nastavení celkové měřené spotřebě. Aby měřič energie dával správné hodnoty, hodnota tohoto údaje bude nastavena na údaj měřená hodnota * pulsní faktor."
+      }
+    },
+    {
+      "id": "keep_alive_period",
+      "zwave": {
+        "index": 10,
+        "size": 2
+      },
+      "type": "number",
+      "attr": {
+        "min": 0,
+        "max": 32767
+      },
+      "value": 60,
+      "label": {
+        "en": "Keep Alive Period [s]",
+        "cs": "Délka bdělosti [s]"
+      },
+      "hint": {
+        "en": "How many seconds of inactivity to be awake before going back to sleep",
+        "cs": "Kolik vteřin neaktivity zůstane zařízení vzhůru než přejde do módu spánku"
+      }
+    },
+    {
+      "id": "realtime_mode",
+      "zwave": {
+        "index": 11,
+        "size": 2
+      },
+      "type": "number",
+      "attr": {
+        "min": 0,
+        "max": 32767
+      },
+      "value": 0,
+      "label": {
+        "en": "Realtime Mode [s]",
+        "cs": "Online mod [s]"
+      },
+      "hint": {
+        "en": "How many seconds before going out of realtime / always on mode. Can be set to start realtime mode. Will be set by pressing button on device once. (twice clears realtime mode)",
+        "cs": "Počet vteřin před tím, než odejde z online módu. Může být nastaveno pro spuštění online modu. Nastavuje se stiskem tlačítka na zařízení 1x (2x ukončí online mód)"
+      }
+    },
+    {
+      "id": "serial_number",
+      "zwave": {
+        "index": 12,
+        "size": 2
+      },
+      "type": "label",
+      "value": "",
+      "label": {
+        "en": "Serial number[read-only]",
+        "cs": "Sériové číslo [pouze-čtení]"
+      }
+    },
+    {
+      "id": "debug",
+      "zwave": {
+        "index": 13,
+        "size": 1
+      },
+      "type": "dropdown",
+      "label": {
+        "en": "Debug",
+        "cs": "Debug"
+      },
+      "value": "0",
+      "hint": {
+        "en": "Debug Mode (LED)",
+        "cs": "Debug mód (LED)"
+      },
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Off",
+            "cs": "Vypnuto"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "LED blinks at pulse counting",
+            "cs": "LED bliká při počítání pulsů"
+          }
+        }
+      ]
+    }
+  ]
+}

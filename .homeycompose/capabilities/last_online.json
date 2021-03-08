@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Last online"
+  },
+  "getable": true,
+  "setable": false
+}

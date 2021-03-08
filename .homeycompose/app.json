@@ -1,0 +1,58 @@
+{
+  "id": "com.northq",
+  "sdk": 3,
+  "name": {
+    "en": "NorthQ",
+    "nl": "NorthQ",
+    "de": "NorthQ",
+    "cs": "NorthQ"
+  },
+  "version": "3.2.4",
+  "compatibility": ">=5.0.0",
+  "description": {
+    "en": "NorthQ Z-Wave devices for Homey",
+    "nl": "NorthQ Z-Wave apparaten voor Homey",
+    "de": "NorthQ Z-Wave Geräte für Homey",
+    "cs": "NorthQ Z-Wave zařízení pro Homey"
+  },
+  "tags": {
+    "en": [
+      "power meter"
+    ],
+    "nl": [
+      "power meter"
+    ],
+    "de": [
+      "power meter"
+    ],
+    "cs": [
+      "měřič elektrické energie"
+    ]
+  },
+  "category": [
+    "energy"
+  ],
+  "permissions": [
+    "homey:wireless:zwave"
+  ],
+  "images": {
+    "large": "/assets/images/large.jpg",
+    "small": "/assets/images/small.jpg"
+  },
+  "author": {
+    "name": "Daniel Abegglen",
+    "email": "daniel.abegglen@gmail.com"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Daniel Abegglen",
+        "email": "daniel.abegglen@gmail.com"
+      },
+      {
+        "name": "Jiri Lapacek",
+        "email": "j.lapackovi@gmail.com"
+      }
+    ]
+  }
+}
